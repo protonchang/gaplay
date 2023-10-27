@@ -1,8 +1,5 @@
 name: Blog Build
-on:
-  push:
-    tags:
-      - '*'
+on: push
 
 jobs:
   build:
@@ -23,19 +20,19 @@ jobs:
           bundle install
           ./build-styles.sh
           bundle exec jekyll build -s blog/ -d release && ls ./release
-      - name: Push Release Data
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.GA_DEPLOY_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name "OttavaGA"
-          git config --global user.email "admin@ottava.io"
-          cd ./release
-          echo "blog.ottava.io" > CNAME
-          git init
-          git add -A
-          git commit -m "$(date)"
-          git branch -M master
-          git remote add origin git@github.com:ottavaio/ottavaio.github.io.git
-          git push --force -u origin master
+      # - name: Push Release Data
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "${{ secrets.GA_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
+      #     git config --global user.name "OttavaGA"
+      #     git config --global user.email "admin@ottava.io"
+      #     cd ./release
+      #     echo "blog.ottava.io" > CNAME
+      #     git init
+      #     git add -A
+      #     git commit -m "$(date)"
+      #     git branch -M master
+      #     git remote add origin git@github.com:ottavaio/ottavaio.github.io.git
+      #     git push --force -u origin master
