@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div id="category">
+  <div id="category-header">
+    <h1>{{ page.category }}</h1>
+  </div>
+  <div class="posts">
+    {% for p in site.categories[page.category] %}
+      <a href="{{ p.url | prepend: site.baseurl }}" class="category-post clearfix">
+        <!-- {% if forloop.index == 1 %}
+          <h1 id="category-header">{{ page.category }}</h1>
+        {% endif %} -->
+        <div class="img" style="background-image: url('{{ p.image | prepend: "/images/" | prepend: site.baseurl }}');"></div>
+        <h5>
+          <span>
+            {{ p.date | date: "%b %-d, %Y" }} 
+          </span>
+          posted by {{ p.author }}
+        </h5>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.category-intro }}</p>
+        <div class="post-bottom-mask"></div>
+      </a>
+    {% endfor %}
+  </div>
+</div>

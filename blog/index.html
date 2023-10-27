@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div id="post-list">
+  <div class="banner">
+    <h1>Ottava Blog</h1>
+    <h4>Tips & Use Cases</h4>
+  </div>
+  <ul class="posts">
+    {% for post in paginator.posts %}
+      {% assign postUrl = post.url | prepend: site.baseurl %}
+      <li class="post">
+        <a href="{{ postUrl }}" class="featured-img" style="background-image: url({{ post.image | prepend: "/images/" | prepend: site.baseurl }})"></a>
+        <div class="post-wrap">
+          <h5 class="post-meta">
+            <span class="post-category">{{ post.categories[0] }} | {{ post.date | date: "%b %-d, %Y" }}</span> posted by {{ post.author }}
+          </h5>
+          <a href="{{ postUrl }}" class="title"><h1>{{ post.title }}</h1></a>
+          <p class="post-intro">{{post.index-intro}}</p>
+          <a class="post-more" href="{{ postUrl }}">continue reading</a>
+          <div class="clearfix"></div>
+        </div>
+      </li>
+      {% endfor %}
+      <li class="pagination">
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl}}" class="newer">OLDER POSTS</a>
+        {% endif %}
+
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl}}" class="older">NEWER POSTS</a>
+        {% endif %}
+      </li>
+  </ul> 
+</div>

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div id="post">
+  <article>
+    <h5 class="post-meta">
+      <span class="post-category"><a href="{{ page.categories[0] | prepend: "/category/" | prepend: site.baseurl }}">{{ page.categories[0] }}</a> | {{ page.date | date: "%b %-d, %Y" }}</span> by <a href="{{page.authorLink}}" class="name">{{ page.author }}</a>
+    </h5>
+    <h2 class="title">{{ page.title }}</h2>
+    <div class="share">
+      {% assign postUrl = site.url | append: site.baseurl | append: page.url %}
+      <a href="http://twitter.com/share?text={{page.title}}&url={{postUrl}}&via={{site.twitter_account}}" class="twitter" target="_blank"></a>
+      <a href="http://www.facebook.com/sharer.php?u={{postUrl}}" class="fb" target="_blank"></a>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&url={{postUrl}}&title={{page.title}}&summary=&source=" target="_blank" class="in"></a>
+    </div>
+    <span class="clearfix"></span>
+    <div class="markdown">{{ content }}</div>
+    <div class="bottom">
+    </div>
+    <span class="clearfix"></span>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </article>
+</div>

@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Test post"
+date:   2023-10-25
+# categories: "News"
+category-intro: "Test post"
+
+index-intro: "
+Why ottava test post
+"
+image: "2023-10-Test_post/blog.png"
+tags: marketing
+author: "Ottava marketing"
+# authorImg: "/images/author/"
+authorDesc: "Marketing, Ottava."
+
+
+
+imgDir: "2023-10-Test_post/blog.png"
+---
+
+![]({{ site.baseurl }}/images/{{page.imgDir}}/blog.png)
+
+Dear all, 
+
+# Test
+## Test
+### Test
+#### Test
+
+test content

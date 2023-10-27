@@ -1,0 +1,32 @@
+# Site settings
+name: "Ottava Blog"
+title: "Ottava Blog"
+email: info@ottava.io
+description: ""
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+# url: "http://localhost:4000" # the base hostname & protocol for your site
+url: "https://test.ottava.io" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+#github_username:  jekyll
+
+
+plugins:
+  - jekyll-paginate
+
+
+permalink: '/p/:title.html'
+paginate: 7
+paginate_path: "/pages/page:num/"
+
+# Build settings
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
+
+category_archive: {
+	path: category
+}
+
+twitter_account: 'ottava_io'
+locale:         en_us
+icon: "/blog/img/ottava-favicon-8.png"

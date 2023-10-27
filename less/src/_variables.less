@@ -1,0 +1,207 @@
+//Copyright (C) 2013 Potix Corporation. All Rights Reserved.
+@import "../bootstrap/_variables.less";
+@import "_variables-bg.less";
+@import "_variables-sep.less";
+@import "_variables-text.less";
+@import "_tree_variables.less";
+
+// colors
+//gray
+@gray-4c: #4C4C4C;//was text-color, only used for button since m2
+@gray-7f: #7F7F7F;//was light-text-color
+@gray-bd: #BDBDBD;//dark-border was lighter-text-color
+@gray-ed: #EDEDED;//grey-bg-color, border-color
+
+@gray-f8: #F8F8F8;
+
+//green
+@green-9a: #9AC656;//rgb(154,198,86)
+@green-90: #90C262;//TBD
+@green-7b: #7BB340;
+
+@green-c8: #C8E3AD;//tree item border
+@green-e6: #E6F2D1;
+@green-ed: #EDF6DF;//was #EDF6DF
+@green-f4: #F4FAEC;
+
+//red
+@keikai-red: #F20000;
+@red-c8: #C82424;
+@red-d4: #D40000;
+
+@red-c1: #C11D28;
+@red-eb: #EB5E60;//replace @red-d7: #D7434D;
+
+//etc
+@orange-e5: #E57815;
+@blue-a1: #1A31A1;
+@yellow-f8: #F8BA09;
+
+//priority color
+@priority-urgent: @red-eb;
+@priority-high: @yellow-f8;
+@priority-medium: @gray-bd;
+@priority-low: #7AA6A6;
+
+//favorited
+@favorited-icon-color: @yellow-f8;
+@task-favorited: #EB5F64;
+@task-followed: @green-text-color;
+@task-in-progress: @green-text-color;
+
+//due
+//for charts
+@overdue-bg-color: @red-eb;
+@today-bg-color: @yellow-f8;
+@tomorrow-bg-color: @priority-low;//rgb(122, 166, 166)
+@upcoming-bg-color: rgba(122,166,166,.6);
+@later-bg-color: rgba(122,166,166,.3);
+
+//SPEC: task tree only 3 colors
+@overdue-text-color: @overdue-bg-color;
+@today-text-color: @today-bg-color;
+@upcoming-text-color: @tomorrow-bg-color;//and later for date label
+
+
+//font
+@ws-body-font: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft JhengHei";
+
+@ws-logo-font: 'Rubik', sans-serif;
+@ws-logo-font-size: @5-5;
+
+// @ws-navbar-font: 'Inter', sans-serif;
+@ws-navbar-font-size: @4-5;
+@ws-navbar-font-size-small: @4;
+
+@ws-font-weight-light: 300;
+@ws-font-weight-regular: 400;
+@ws-font-weight-medium: 500;
+@ws-font-weight-semibold: 600;
+@ws-font-weight-bold: 700;
+
+//size
+@ws-header-height: 48px;
+@ws-footer-height: 48px;
+
+
+//component
+@unread-icon-color: @orange-e5;
+@ws-announcement-border: #F2B074;
+@ws-announcement-bg-color: #FAE0C8;
+@ws-search-hit-bg-color: #FFE093;
+@tree-picker-opened-button-bg: @green-f4;//#CEE4BA;
+
+
+
+// color
+@orange: #F26522;
+@orange-dark: #D47502;
+@brown: #8C765A;
+@brown-light: #b08b5e;
+@brown-dark: #594b39;
+
+//Text
+@error-text-color: @red-eb;
+@link-text-color2: #7DA755; // new design (regular) #1709 2015/5/26
+
+// tooltip
+@tooltip-color: rgba(64,64,64,0.90);
+@red-tooltip-color: @red-c1;
+
+// comment
+@comment-pined-color: @orange-e5;
+
+
+// font
+//@body-font: 'Open Sans', sans-serif;
+@body-font: @ws-body-font;
+@body-font-size: 16px;
+@home-body-font: @ws-body-font;
+
+@px: 1px; // 1px
+@0-5: 0.125rem; // 2px
+@1: 0.25rem; // 4px
+@1-5: 0.375rem; // 6px
+@2: 0.5rem; // 8px
+@2-5: 0.625rem; // 10px
+@3: 0.75rem; // 12px
+@3-5: 0.875rem; // 14px
+@3-75: 0.9375rem; // 15px
+@4: 1rem; // 16px
+@4-5: 1.125rem; // 18px
+@5: 1.25rem; // 20px
+@5-5: 1.375rem; // 22px
+@6: 1.5rem; // 24px
+@6-5: 1.625rem; // 26px
+@7: 1.75rem; // 28px
+@7-5: 1.875rem; // 30px
+@8: 2rem; // 32px
+@9: 2.25rem; // 36px
+@10: 2.5rem; // 40px
+@11: 2.75rem; // 44px
+@12: 3rem; // 48px
+@14: 3.5rem; // 56px
+@15: 3.75rem; // 60px
+@20: 5rem; // 80px
+@25: 6.25rem; // 100px
+
+
+// size
+@header-height: @14;
+@footer-height: 89px;
+
+@footer-height-480: 110px;
+@footer-height-320: 154px;
+@announcement-height: 34px;
+
+//home
+@home-menu-height: @14;
+@home-menu-height-480: 48px;
+
+@notification-dropdown-width: 320px;
+
+
+@task-desc-min-height: 44px;
+@task-desc-max-height: 105px;
+
+
+//icon message
+@message-view-icon-size: 48px;
+@message-view-title-size: 16px;
+@message-view-desc-size: 12px;
+
+@message-view-icon-lg-size: 64px;
+@message-view-title-lg-size: 24px;
+@message-view-desc-lg-size: 16px;
+
+//Toggle Switch button
+@cmn-toggle-size: 20px;
+
+
+
+// ottava basic colors
+@neutral-0: #FFFFFF;
+@neutral-10: #FCFCFC;
+@neutral-30: #F6F6F6;
+@neutral-50: #F1F1F1;
+@neutral-100: #E2E2E2;
+@neutral-200: #C7C7C7;
+@neutral-300: #ACACAC;
+@neutral-400: #919191;
+@neutral-500: #767677;
+@neutral-600: #5E5E5E;
+@neutral-700: #464646;
+@neutral-800: #303030;
+@neutral-900: #1C1C1C;
+@neutral-1000: #000000;
+
+@blue-50: #E3F3FF;
+@blue-100: #C9E7FF;
+@blue-200: #95CCFF;
+@blue-300: #69AFFF;
+@blue-400: #428EFF;
+@blue-500: #166FF6;
+@blue-600: #0055D4;
+@blue-700: #003CAD;
+@blue-800: #00277F;
+@blue-900: #001551;
