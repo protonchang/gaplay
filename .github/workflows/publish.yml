@@ -21,6 +21,7 @@ jobs:
       - name: Build site and pages
         run: |
           bundle install
+          ./build-styles.sh
           bundle exec jekyll build -s blog/ -d release && ls ./release
       - name: Push Release Data
         run: |
