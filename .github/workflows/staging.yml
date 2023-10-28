@@ -1,8 +1,8 @@
-name: Blog Push (Prod)
+name: Blog Push (Staging)
 on:
   push:
     tags:
-      - '*-prod'
+      - '*-staging'
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Push Release Data
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.PROD_PUSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.STAGING_PUSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "OttavaGA"
@@ -38,5 +38,5 @@ jobs:
           git add -A
           git commit -m "$(date)"
           git branch -M master
-          git remote add origin git@github.com:protonchang/gastatic.git
+          git remote add origin git@github.com:protonchang/gastaging.git
           git push --force -u origin master
